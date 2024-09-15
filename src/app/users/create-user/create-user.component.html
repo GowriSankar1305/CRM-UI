@@ -1,0 +1,89 @@
+<div class="app-wrapper">
+    <app-sidebar></app-sidebar>
+    <div class="app-content">
+        <app-header></app-header>
+        <main class="p-6">
+            <div class="flex flex-col gap-6">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">User information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="firstName" class="text-gray-800 text-sm font-medium inline-block mb-2">First name</label>
+                                <input type="text" class="form-input" id="firstName" [(ngModel)]="newUser.firstName">
+                            </div>
+                            <div>
+                                <label for="lastName" class="text-gray-800 text-sm font-medium inline-block mb-2">Last name</label>
+                                <input type="text" class="form-input" id="lastName" [(ngModel)]="newUser.lastName">
+                            </div>
+                            <div>
+                                <label for="userEmail" class="text-gray-800 text-sm font-medium inline-block mb-2">Email</label>
+                                <input type="text" class="form-input" id="userEmail" [(ngModel)]="newUser.userEmail">
+                            </div>
+                            <div>
+                                <label for="userPwd" class="text-gray-800 text-sm font-medium inline-block mb-2">Password</label>
+                                <input type="password" class="form-input" id="userPwd" [(ngModel)]="newUser.userPassword">
+                            </div>
+                            <div>
+                                <label for="alias" class="text-gray-800 text-sm font-medium inline-block mb-2">Alias</label>
+                                <input type="text" class="form-input" id="alias" [(ngModel)]="newUser.alias">
+                            </div>
+                            <div>
+                                <label for="phoneNo" class="text-gray-800 text-sm font-medium inline-block mb-2">Phone</label>
+                                <input type="text" class="form-input" id="phoneNo" [(ngModel)]="newUser.phoneNo">
+                            </div>
+                            <div>
+                                <label for="userMobile" class="text-gray-800 text-sm font-medium inline-block mb-2">Mobile</label>
+                                <input type="text" class="form-input" id="userMobile" [(ngModel)]="newUser.userMobile">
+                            </div>
+                            <div>
+                                <label for="faxNo" class="text-gray-800 text-sm font-medium inline-block mb-2">Fax</label>
+                                <input type="text" class="form-input" id="faxNo" [(ngModel)]="newUser.faxNo">
+                            </div>
+                            <div>
+                                <label for="dateOfBirth" class="text-gray-800 text-sm font-medium inline-block mb-2">Date of birth</label>
+                                <input type="text" class="form-input" id="dateOfBirth" [(ngModel)]="newUser.dateOfBirth" placeholder="DD-MM-YYYY">
+                            </div>
+                            <div class="lg:col-span-2">
+                                <label for="websiteUrl" class="text-gray-800 text-sm font-medium inline-block mb-2">Web site url</label>
+                                <input type="text" class="form-input" id="websiteUrl" [(ngModel)]="newUser.websiteUrl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-6 mt-5">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Address information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="street" class="text-gray-800 text-sm font-medium inline-block mb-2">Street</label>
+                                <input type="email" class="form-input" id="street" [(ngModel)]="address.street">
+                            </div>
+                            <div>
+                                <label for="city" class="text-gray-800 text-sm font-medium inline-block mb-2">City</label>
+                                <input type="email" class="form-input" id="city" [(ngModel)]="address.city">
+                            </div>
+                            <div>
+                                <label for="state" class="text-gray-800 text-sm font-medium inline-block mb-2">State</label>
+                                <input type="email" class="form-input" id="state" [(ngModel)]="address.state">
+                            </div>
+                            <div>
+                                <label for="zipCode" class="text-gray-800 text-sm font-medium inline-block mb-2">Zip code</label>
+                                <input type="email" class="form-input" id="zipCode" [(ngModel)]="address.zipCode">
+                            </div>
+                            <div>
+                                <label for="country" class="text-gray-800 text-sm font-medium inline-block mb-2">Country</label>
+                                <input type="email" class="form-input" id="country" [(ngModel)]="address.country">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <button type="button" class="btn bg-primary text-white" (click)="saveUser()" [innerHTML]="btnContent" [disabled]="isBtnDisabled"></button>
+            </div>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<body class="bg-primary h-screen w-screen flex justify-center items-center">
+    <div class="2xl:w-1/4 lg:w-1/3 md:w-1/2 w-full">
+        <div class="card overflow-hidden sm:rounded-md rounded-none">
+            <div class="px-6 py-8">
+                <a class='flex justify-center mb-8' href='index.html'>
+                    <img class="h-6" src="assets/images/logo-dark.png" alt="">
+                </a>
+                <div class="mb-4">
+                    <label class="mb-2" for="userFullName">Full name</label>
+                    <input name="userFullName" id="userFullName" [(ngModel)]="newUser.userFullName" placeholder="Enter Full name here" class="form-input" type="text">
+                </div>
+                <div class="mb-4">
+                    <label class="mb-2" for="userEmail">Email address</label>
+                    <input name="userEmail" id="userEmail" [(ngModel)]="newUser.userEmail" placeholder="Enter Email here" class="form-input" type="email">
+                </div>
+                <div class="mb-4">
+                    <label class="mb-2" for="userEmail">Mobile number</label>
+                    <input name="userMobile" id="userMobile" [(ngModel)]="newUser.userMobile" placeholder="Enter Mobile number here" class="form-input" type="text">
+                </div>
+                <div class="mb-4">
+                    <label class="mb-2" for="userPassword">Password</label>
+                    <input name="userPassword" id="userPassword" [(ngModel)]="newUser.userPassword" placeholder="Enter new password here" class="form-input" type="password">
+                </div>
+                <div class="mb-4">
+                    <label class="mb-2" for="userPassword">Confirm your password</label>
+                    <input name="confirmPassword" id="confirmPassword" [(ngModel)]="newUser.confirmPassword" placeholder="Confirm your password here" class="form-input" type="password">
+                </div>
+                <div class="flex items-center mb-4">
+                    <input type="checkbox" class="form-checkbox rounded" id="checkbox-signin">
+                    <label class="ms-2" for="checkbox-signin">I accept <a href="#" class="text-primary">Terms and Conditions</a></label>
+                </div>
+                <div class="flex justify-center mb-3">
+                    <button class="btn w-full text-white bg-primary" (click)="createNewUser()" [disabled]="isBtnDisabled" [innerHTML]="btnContent"></button>
+                </div>
+            </div>
+        </div>
+        <p class="text-white text-center mt-8">Already have an account ?<a class='font-medium ms-1' [routerLink]="['/login']">Sign In</a></p>
+    </div>
+</body>

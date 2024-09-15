@@ -1,0 +1,136 @@
+<div class="app-wrapper">
+    <app-sidebar></app-sidebar>
+    <div class="app-content">
+        <app-header></app-header>
+        <main class="p-6">
+            <div class="flex flex-col gap-6">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Account information</h4>
+                         <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                                <div>
+                                    <label for="ownerId" class="text-gray-800 text-sm font-medium inline-block mb-2">Account owner</label>
+                                    <select id="ownerId" class="form-select" name="ownerId" [(ngModel)]="newAccount.ownerId">
+                                        <option value="0">Choose</option>
+                                        <option *ngFor="let owner of accOwners" [value]="owner.userId">{{owner.userEmail}}&nbsp;&nbsp;{{owner.lastName}}</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="accountName" class="text-gray-800 text-sm font-medium inline-block mb-2">Account name</label>
+                                    <input type="text" class="form-input" id="accountName" name="accountName" [(ngModel)]="newAccount.accountName">
+                                </div>
+                                <div class="lg:col-span-2">
+                                    <label for="website" class="text-gray-800 text-sm font-medium inline-block mb-2">Web site url</label>
+                                    <input type="text" class="form-input" id="website" name="website" [(ngModel)]="newAccount.website">
+                                </div>
+                                <div>
+                                    <label for="accountNumber" class="text-gray-800 text-sm font-medium inline-block mb-2">Account number</label>
+                                    <input type="text" class="form-input" id="accountNumber" name="accountNumber" [(ngModel)]="newAccount.accountNumber">
+                                </div>
+                                <div>
+                                    <label for="annualRevenue" class="text-gray-800 text-sm font-medium inline-block mb-2">Annual revenue</label>
+                                    <input type="text" class="form-input" id="annualRevenue" name="annualRevenue" [(ngModel)]="newAccount.annualRevenue">
+                                </div>
+                                <div>
+                                    <label for="accountType" class="text-gray-800 text-sm font-medium inline-block mb-2">Account type</label>
+                                    <select id="accountType" class="form-select" name="accountType" [(ngModel)]="newAccount.accountType">
+                                        <option value="">Choose</option>
+                                        <option *ngFor="let type of accTypes" [value]="type">{{type}}</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="industry" class="text-gray-800 text-sm font-medium inline-block mb-2">Industry type</label>
+                                    <select id="industry" class="form-select" name="industry" [(ngModel)]="newAccount.industry">
+                                        <option value="">Choose</option>
+                                        <option *ngFor="let type of industryTypes" [value]="type">{{type}}</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="ownerShipType" class="text-gray-800 text-sm font-medium inline-block mb-2">Ownership type</label>
+                                    <select id="ownerShipType" class="form-select" name="ownerShipType" [(ngModel)]="newAccount.ownerShipType">
+                                        <option value="">Choose</option>
+                                        <option *ngFor="let type of ownershipTypes" [value]="type">{{type}}</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="phone" class="text-gray-800 text-sm font-medium inline-block mb-2">Phone no</label>
+                                    <input type="text" class="form-input" id="phone" name="phone" [(ngModel)]="newAccount.phone">
+                                </div>
+                                <div>
+                                    <label for="fax" class="text-gray-800 text-sm font-medium inline-block mb-2">Fax no</label>
+                                    <input type="text" class="form-input" id="fax" name="fax" [(ngModel)]="newAccount.fax">
+                                </div>
+                                <div>
+                                    <label for="employees" class="text-gray-800 text-sm font-medium inline-block mb-2">No of employees</label>
+                                    <input type="number" class="form-input" id="employees" name="employees" [(ngModel)]="newAccount.employees">
+                                </div>
+                                <div>
+                                    <label for="sicCode" class="text-gray-800 text-sm font-medium inline-block mb-2">Sic code</label>
+                                    <input type="text" class="form-input" id="sicCode" name="sicCode" [(ngModel)]="newAccount.sicCode">
+                                </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-6 mt-5">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Billing address information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="billStreet" class="text-gray-800 text-sm font-medium inline-block mb-2">Billing street</label>
+                                <input type="text" class="form-input" id="billStreet" name="billStreet" [(ngModel)]="billingAddrs.street">
+                            </div>
+                            <div>
+                                <label for="billCity" class="text-gray-800 text-sm font-medium inline-block mb-2">Billing city</label>
+                                <input type="text" class="form-input" id="billCity" name="billCity" [(ngModel)]="billingAddrs.city">
+                            </div>
+                            <div>
+                                <label for="billState" class="text-gray-800 text-sm font-medium inline-block mb-2">Billing state</label>
+                                <input type="text" class="form-input" id="billState" name="billState" [(ngModel)]="billingAddrs.state">
+                            </div>
+                            <div>
+                                <label for="billZip" class="text-gray-800 text-sm font-medium inline-block mb-2">Billing zip code</label>
+                                <input type="text" class="form-input" id="billZip" name="billZip" [(ngModel)]="billingAddrs.zipCode">
+                            </div>
+                            <div>
+                                <label for="bilCountry" class="text-gray-800 text-sm font-medium inline-block mb-2">Billing country</label>
+                                <input type="text" class="form-input" id="bilCountry" name="bilCountry" [(ngModel)]="billingAddrs.country">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Shipping address information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="street" class="text-gray-800 text-sm font-medium inline-block mb-2">Shipping street</label>
+                                <input type="text" class="form-input" id="street" name="street" [(ngModel)]="shippingAddrs.street">
+                            </div>
+                            <div>
+                                <label for="city" class="text-gray-800 text-sm font-medium inline-block mb-2">Shipping city</label>
+                                <input type="text" class="form-input" id="city" name="city" [(ngModel)]="shippingAddrs.street">
+                            </div>
+                            <div>
+                                <label for="state" class="text-gray-800 text-sm font-medium inline-block mb-2">Shipping state</label>
+                                <input type="text" class="form-input" id="state" name="state" [(ngModel)]="shippingAddrs.state">
+                            </div>
+                            <div>
+                                <label for="zipCode" class="text-gray-800 text-sm font-medium inline-block mb-2">Shipping zip code</label>
+                                <input type="text" class="form-input" id="zipCode" name="zipCode" [(ngModel)]="shippingAddrs.zipCode">
+                            </div>
+                            <div>
+                                <label for="country" class="text-gray-800 text-sm font-medium inline-block mb-2">Shipping country</label>
+                                <input type="text" class="form-input" id="country" name="country" [(ngModel)]="shippingAddrs.country">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <button type="button" class="btn bg-primary text-white" (click)="saveAccount()" [innerHTML]="btnContent" [disabled]="isBtnDisabled"></button>
+            </div>
+        </main>
+    </div>
+</div>    

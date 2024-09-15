@@ -1,0 +1,91 @@
+<div class="app-wrapper">
+    <app-sidebar></app-sidebar>
+    <div class="app-content">
+        <app-header></app-header>
+        <main class="p-6">
+            <div class="flex flex-col gap-6">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Vendor information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="ownerId" class="text-gray-800 text-sm font-medium inline-block mb-2">Vendor owner</label>
+                                <select id="ownerId" class="form-select" name="ownerId" [(ngModel)]="newVendor.ownerId">
+                                    <option value="0">Choose</option>
+                                    <option *ngFor="let owner of vendorOwners" [value]="owner.userId">{{owner.firstName}}&nbsp;&nbsp;{{owner.userEmail}}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="vendorName" class="text-gray-800 text-sm font-medium inline-block mb-2">Vendor name</label>
+                                <input type="text" class="form-input" id="vendorName" name="vendorName" [(ngModel)]="newVendor.vendorName">
+                            </div>
+                            <div>
+                                <label for="email" class="text-gray-800 text-sm font-medium inline-block mb-2">Email</label>
+                                <input type="text" class="form-input" id="email" name="email" [(ngModel)]="newVendor.email">
+                            </div>
+                            <div>
+                                <label for="email" class="text-gray-800 text-sm font-medium inline-block mb-2">Email</label>
+                                <input type="text" class="form-input" id="email" name="email" [(ngModel)]="newVendor.email">
+                            </div>
+                            <div>
+                                <label for="phone" class="text-gray-800 text-sm font-medium inline-block mb-2">Phone</label>
+                                <input type="text" class="form-input" id="phone" name="phone" [(ngModel)]="newVendor.phone">
+                            </div>
+                            <div>
+                                <label for="webSite" class="text-gray-800 text-sm font-medium inline-block mb-2">Website</label>
+                                <input type="text" class="form-input" id="webSite" name="webSite" [(ngModel)]="newVendor.webSite">
+                            </div>
+                            <div>
+                                <label for="category" class="text-gray-800 text-sm font-medium inline-block mb-2">Category</label>
+                                <input type="text" class="form-input" id="category" name="category" [(ngModel)]="newVendor.category">
+                            </div>
+                            <div>
+                                <label for="glAccount" class="text-gray-800 text-sm font-medium inline-block mb-2">General ledger account</label>
+                                <select id="glAccount" class="form-select" name="glAccount" [(ngModel)]="newVendor.glAccount">
+                                    <option value="0">Choose</option>
+                                    <option *ngFor="let led of ledgers" [value]="led">{{led}}</option>
+                                </select>
+                            </div>
+                            <div class="lg:col-span-2">
+                                <label for="description" class="text-gray-800 text-sm font-medium inline-block mb-2">Description</label>
+                                <input type="text" class="form-input" id="description" name="description" [(ngModel)]="newVendor.description">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-6">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Address information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="street" class="text-gray-800 text-sm font-medium inline-block mb-2">Street</label>
+                                <input type="text" class="form-input" id="street" name="street" [(ngModel)]="address.street">
+                            </div>
+                            <div>
+                                <label for="city" class="text-gray-800 text-sm font-medium inline-block mb-2">City</label>
+                                <input type="text" class="form-input" id="city" name="city" [(ngModel)]="address.city">
+                            </div>
+                            <div>
+                                <label for="state" class="text-gray-800 text-sm font-medium inline-block mb-2">State</label>
+                                <input type="text" class="form-input" id="state" name="state" [(ngModel)]="address.state">
+                            </div>
+                            <div>
+                                <label for="zipCode" class="text-gray-800 text-sm font-medium inline-block mb-2">Zip code</label>
+                                <input type="text" class="form-input" id="zipCode" name="zipCode" [(ngModel)]="address.zipCode">
+                            </div>
+                            <div>
+                                <label for="country" class="text-gray-800 text-sm font-medium inline-block mb-2">Country</label>
+                                <input type="text" class="form-input" id="country" name="country" [(ngModel)]="address.country">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <button type="button" class="btn bg-primary text-white" (click)="saveVendor()" [innerHTML]="btnContent" [disabled]="isBtnDisabled"></button>
+            </div>
+        </main>
+    </div>
+</div>

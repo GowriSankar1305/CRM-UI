@@ -1,0 +1,137 @@
+<div class="app-wrapper">
+    <app-sidebar></app-sidebar>
+    <div class="app-content">
+        <app-header></app-header>
+        <main class="p-6">
+            <div class="flex flex-col gap-6">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Contact information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="contactOwner" class="text-gray-800 text-sm font-medium inline-block mb-2">Contact owner</label>
+                                <select id="contactOwner" name="contactOwner" class="form-select" [(ngModel)]="newContact.ownerId">
+                                    <option value="0">Choose</option>
+                                    <option *ngFor="let owner of contactOwners" [value]="owner.userId">{{owner.firstName}}&nbsp;&nbsp;{{owner.userEmail}}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="leadSource" class="text-gray-800 text-sm font-medium inline-block mb-2">Lead source</label>
+                                <select id="leadSource" name="leadSource" class="form-select" [(ngModel)]="newContact.leadSource">
+                                    <option value="">Choose</option>
+                                    <option *ngFor="let source of leadSources" [value]="source">{{source}}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="accountId" class="text-gray-800 text-sm font-medium inline-block mb-2">Account name</label>
+                                <select id="accountId" name="accountId" class="form-select" [(ngModel)]="newContact.accountId">
+                                    <option value="">Choose</option>
+                                    <option *ngFor="let acc of accounts" [value]="acc.accountId">{{acc.accountName}}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="firstName" class="text-gray-800 text-sm font-medium inline-block mb-2">First name</label>
+                                <input type="text" class="form-input" id="firstName" name="firstName" [(ngModel)]="newContact.firstName">
+                            </div>
+                            <div>
+                                <label for="lastName" class="text-gray-800 text-sm font-medium inline-block mb-2">Last name</label>
+                                <input type="text" class="form-input" id="lastName" name="lastName" [(ngModel)]="newContact.lastName">
+                            </div>
+                            <div>
+                                <label for="email" class="text-gray-800 text-sm font-medium inline-block mb-2">Email</label>
+                                <input type="text" class="form-input" name="email" id="email" [(ngModel)]="newContact.email">
+                            </div>
+                            <div>
+                                <label for="phone" class="text-gray-800 text-sm font-medium inline-block mb-2">Phone</label>
+                                <input type="text" class="form-input" id="phone" name="phone" [(ngModel)]="newContact.phone">
+                            </div>
+                            <div>
+                                <label for="mobile" class="text-gray-800 text-sm font-medium inline-block mb-2">Mobile</label>
+                                <input type="text" class="form-input" id="mobile" name="mobile" [(ngModel)]="newContact.mobile">
+                            </div>
+                            <div>
+                                <label for="title" class="text-gray-800 text-sm font-medium inline-block mb-2">Title</label>
+                                <input type="text" class="form-input" name="title" id="title" [(ngModel)]="newContact.title">
+                            </div>
+                            <div>
+                                <label for="department" class="text-gray-800 text-sm font-medium inline-block mb-2">Department</label>
+                                <input type="text" class="form-input" id="department" name="department" [(ngModel)]="newContact.department">
+                            </div>
+                            <div>
+                                <label for="fax" class="text-gray-800 text-sm font-medium inline-block mb-2">Fax</label>
+                                <input type="text" class="form-input" id="fax" name="fax" [(ngModel)]="newContact.fax">
+                            </div>
+                            <div>
+                                <label for="newContact" class="text-gray-800 text-sm font-medium inline-block mb-2">Date of birth</label>
+                                <input type="text" class="form-input" id="newContact" name="newContact" [(ngModel)]="newContact.dateOfBirth">
+                            </div>
+                            <div class="lg:col-span-2">
+                                <label for="description" class="text-gray-800 text-sm font-medium inline-block mb-2">Description</label>
+                                <input type="text" class="form-input" id="description" name="description" [(ngModel)]="newContact.description">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-6 mt-5">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Mailing address information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="mailingStreet" class="text-gray-800 text-sm font-medium inline-block mb-2">Mailing street</label>
+                                <input type="text" class="form-input" id="mailingStreet" name="mailingStreet" [(ngModel)]="mailingAddress.street">
+                            </div>
+                            <div>
+                                <label for="mailingCity" class="text-gray-800 text-sm font-medium inline-block mb-2">Mailing city</label>
+                                <input type="text" class="form-input" id="mailingCity" name="mailingCity" [(ngModel)]="mailingAddress.city">
+                            </div>
+                            <div>
+                                <label for="mailingState" class="text-gray-800 text-sm font-medium inline-block mb-2">Mailing state</label>
+                                <input type="text" class="form-input" id="mailingState" name="mailingState" [(ngModel)]="mailingAddress.state">
+                            </div>
+                            <div>
+                                <label for="mailingCode" class="text-gray-800 text-sm font-medium inline-block mb-2">Mailing zip code</label>
+                                <input type="text" class="form-input" id="mailingCode" name="mailingCode" [(ngModel)]="mailingAddress.zipCode">
+                            </div>
+                            <div>
+                                <label for="mailingCountry" class="text-gray-800 text-sm font-medium inline-block mb-2">Mailing country</label>
+                                <input type="text" class="form-input" id="mailingCountry" name="mailingCountry" [(ngModel)]="mailingAddress.country">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Other address information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="otherStreet" class="text-gray-800 text-sm font-medium inline-block mb-2">Other street</label>
+                                <input type="text" class="form-input" id="otherStreet" name="otherStreet" [(ngModel)]="otherAddress.street">
+                            </div>
+                            <div>
+                                <label for="otherCity" class="text-gray-800 text-sm font-medium inline-block mb-2">Other city</label>
+                                <input type="text" class="form-input" id="otherCity" name="otherCity" [(ngModel)]="otherAddress.city">
+                            </div>
+                            <div>
+                                <label for="otherState" class="text-gray-800 text-sm font-medium inline-block mb-2">Other state</label>
+                                <input type="text" class="form-input" id="otherState" name="otherState" [(ngModel)]="otherAddress.state">
+                            </div>
+                            <div>
+                                <label for="otherCode" class="text-gray-800 text-sm font-medium inline-block mb-2">Other zip code</label>
+                                <input type="text" class="form-input" id="otherCode" name="otherCode" [(ngModel)]="otherAddress.zipCode">
+                            </div>
+                            <div>
+                                <label for="otherCountry" class="text-gray-800 text-sm font-medium inline-block mb-2">Other country</label>
+                                <input type="text" class="form-input" id="otherCountry" name="otherCountry" [(ngModel)]="otherAddress.country">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <button type="button" class="btn bg-primary text-white" [innerHTML]="btnContent" [disabled]="isBtnDisabled" (click)="saveContact()">Create contact</button>
+            </div>
+        </main>
+    </div>
+</div>

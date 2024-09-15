@@ -1,0 +1,63 @@
+<div class="app-wrapper">
+    <app-sidebar></app-sidebar>
+    <div class="app-content">
+        <app-header></app-header>
+        <main class="p-6">
+            <div class="flex flex-col gap-6">
+                <div class="card">
+                    <div class="p-6">
+                        <h4 class="card-title mb-4">Task information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                            <div>
+                                <label for="inputEmail4" class="text-gray-800 text-sm font-medium inline-block mb-2">Task owner</label>
+                                <input type="text" class="form-input" id="inputEmail4">
+                            </div>
+                            <div>
+                                <label for="inputEmail4" class="text-gray-800 text-sm font-medium inline-block mb-2">Subject</label>
+                                <input type="text" class="form-input" id="inputEmail4">
+                            </div>
+                            <div>
+                                <label for="inputEmail4" class="text-gray-800 text-sm font-medium inline-block mb-2">Due date</label>
+                                <input type="text" class="form-input" id="inputEmail4">
+                            </div>
+                            <div>
+                                <label for="inputEmail4" class="text-gray-800 text-sm font-medium inline-block mb-2">Status</label>
+                                <select id="inputState" class="form-select">
+                                    <option>Choose</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="inputEmail4" class="text-gray-800 text-sm font-medium inline-block mb-2">Priority</label>
+                                <select id="inputState" class="form-select">
+                                    <option>Choose</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="inputEmail4" class="text-gray-800 text-sm font-medium inline-block mb-2">Contact</label>
+                                <select id="inputState" class="form-select">
+                                    <option>Choose</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                            </div>
+                            <div class="lg:col-span-2">
+                                <label for="inputEmail4" class="text-gray-800 text-sm font-medium inline-block mb-2">Description</label>
+                                <input type="text" class="form-input" id="inputEmail4">
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <button type="button" class="btn bg-primary text-white">Create Task</button>
+            </div>
+        </main>
+    </div>
+</div>

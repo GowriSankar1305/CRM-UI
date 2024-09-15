@@ -27,9 +27,22 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/lunoz/css/icons.min.css",
+              "./node_modules/lunoz/css/theme.min.css"            
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/lunoz/js/jquery.min.js",
+              "./node_modules/lunoz/js/waves.min.js",
+              "./node_modules/lunoz/js/simplebar.min.js",
+              "./node_modules/lunoz/js/frostui.js",
+              "./node_modules/lunoz/js/head.js",
+              "./node_modules/lunoz/js/app.js",
+              "./node_modules/lunoz/js/apexcharts.min.js",
+              "./node_modules/lunoz/js/morris.min.js",
+              "./node_modules/lunoz/js/raphael.min.js",
+              "./node_modules/lunoz/js/dashboard.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -85,6 +98,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []
